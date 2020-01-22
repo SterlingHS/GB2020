@@ -9,7 +9,7 @@
 // it from being updated in the future.
 
 
-package frc.robot.Commands;
+package frc.robot.commands;
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
 
