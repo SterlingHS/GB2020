@@ -36,10 +36,22 @@ public class Hopper extends Subsystem {
     // setDefaultCommand(new MySpecialCommand());
   }
 
-  public void stop_all() 
+  public void all_stop() 
   {
     stop_hopper1();
     stop_hopper2();
+  }
+
+  public void all_in() 
+  {
+    in_hopper1();
+    in_hopper2();
+  }
+
+  public void all_out() 
+  {
+    out_hopper1();
+    out_hopper2();
   }
 
   public void stop_hopper1() 
