@@ -17,5 +17,15 @@ public class RobotMap {
     // public static int rangefinderModule = 1;
 		
 	public static final int DRIVER_USB_PORT_0 = 0;
-	public static final int ACTUATOR_USB_PORT_1 = 1;
+    public static final int ACTUATOR_USB_PORT_1 = 1;
+    
+    // Hopper configuration
+    public static final int HOPPER1_CAN_ID = 20;
+    public static final int HOPPER2_CAN_ID = 21;
+
+    public static final int HOPPER1_DIO_ID = 0;
+    public static final int HOPPER2_DIO_ID = 1;
+
+    public static final double HOPPER1_SPEED = 0.5;
+    public static final double HOPPER2_SPEED = 0.5;
 }	

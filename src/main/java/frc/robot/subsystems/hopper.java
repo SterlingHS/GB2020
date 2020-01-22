@@ -22,78 +22,63 @@ public class hopper extends Subsystem {
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
 
-  // Talon for intake
-  WPI_TalonSRX shoulder = new WPI_TalonSRX(RobotMap.SHOULDER_CAN_ID);
-  WPI_TalonSRX intake = new WPI_TalonSRX(RobotMap.INTAKE_CAN_ID);
+  // Talons for hoppers
+  WPI_TalonSRX hopper1 = new WPI_TalonSRX(RobotMap.HOPPER1_CAN_ID);
+  WPI_TalonSRX hopper2 = new WPI_TalonSRX(RobotMap.HOPPER2_CAN_ID);
 
-  // Counter on shoulder
-  // Counter shoulder_counter;
-  // double position;
-
-  // Switch for ball
-  DigitalInput ball_switch = new DigitalInput(RobotMap.BALL_SWITCH_DIO_ID);
+  // Switch for hoppers (Detect if a ball is in the correct place)
+  DigitalInput hopper1_switch = new DigitalInput(RobotMap.HOPPER1_DIO_ID);
+  DigitalInput hopper2_switch = new DigitalInput(RobotMap.HOPPER2_DIO_ID);
 
   @Override
   public void initDefaultCommand() {
     // Set the default command for a subsystem here.
     // setDefaultCommand(new MySpecialCommand());
-    // reset_counter();
   }
 
-  public void stop_all() {
-    stop_intake();
-    stop_shoulder();
-  }
-
-  public void stop_intake() {
-    intake.set(ControlMode.PercentOutput, 0);
-  }
-
-  public void stop_shoulder() {
-    shoulder.set(ControlMode.PercentOutput, 0);
-  }
-
-    public void in() {
-      intake.set(ControlMode.PercentOutput, RobotMap.MAX_SPEED_INTAKE);
-  }
-
-  public void out() {
-    intake.set(ControlMode.PercentOutput, -RobotMap.MAX_SPEED_INTAKE);
-  }
-
-  public void up() {
-    shoulder.set(ControlMode.PercentOutput, RobotMap.MAX_SPEED_SHOULDER);
-    // position += shoulder_counter.get();
-    // shoulder_counter.reset();
-  }
-
-  public void down() {
-    shoulder.set(ControlMode.PercentOutput, -RobotMap.MAX_SPEED_SHOULDER);
-    // position -= shoulder_counter.get();
-    // shoulder_counter.reset();
-  }
-
-  public boolean is_ball_in()
+  public void stop_all() 
   {
-    return ball_switch.get();
+    stop_hopper1();
+    stop_hopper2();
   }
 
-  /* public void init_counter()
+  public void stop_hopper1() 
   {
-    shoulder_counter = new Counter(new DigitalInput(RobotMap.CounterIO));
-    reset_counter();
+    hopper1.set(ControlMode.PercentOutput, 0);
   }
 
-  public void reset_counter()
+  public void stop_hopper2() 
   {
-    position = 0;
-    shoulder_counter.reset();
+    hopper2.set(ControlMode.PercentOutput, 0);
   }
 
-  public double read_counter()
+  public void in_hopper1() 
   {
-    return position;
-  } */
+      hopper1.set(ControlMode.PercentOutput, RobotMap.HOPPER1_SPEED);
+  }
 
+  public void out_hopper1() 
+  {
+      hopper1.set(ControlMode.PercentOutput, -RobotMap.HOPPER1_SPEED);
+  }
 
+  public void in_hopper2() 
+  {
+    hopper1.set(ControlMode.PercentOutput, RobotMap.HOPPER2_SPEED);
+  }
+
+  public void out_hopper2() 
+  {
+    hopper1.set(ControlMode.PercentOutput, -RobotMap.HOPPER2_SPEED);
+  }
+
+  public boolean is_ball_in_hopper1()
+  {
+    return hopper1_switch.get();
+  }
+
+  public boolean is_ball_in_hopper2()
+  {
+    return hopper2_switch.get();
+  }
 }
