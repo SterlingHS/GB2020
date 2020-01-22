@@ -18,7 +18,7 @@ import edu.wpi.first.wpilibj.DigitalInput;
 /**
  * Add your docs here.
  */
-public class hopper extends Subsystem {
+public class Hopper extends Subsystem {
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
 

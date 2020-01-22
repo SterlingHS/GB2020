@@ -9,10 +9,10 @@
 // it from being updated in the future.
 
 
-package frc.robot.Subsystems;
+package frc.robot.subsystems;
 
 
-import frc.robot.Commands.*;
+import frc.robot.commands.*;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.PIDOutput;
