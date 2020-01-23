@@ -17,5 +17,20 @@ public class RobotMap {
     // public static int rangefinderModule = 1;
 		
 	public static final int DRIVER_USB_PORT_0 = 0;
-	public static final int ACTUATOR_USB_PORT_1 = 1;
+    public static final int ACTUATOR_USB_PORT_1 = 1;
+    /**********************************************************/
+/*                       Intake                           */
+
+	public static int SHOULDER_CAN_ID = 14;
+	public static int INTAKE_CAN_ID = 15;
+	public static int BUTTON_INTAKE_OUT = 1;
+	public static int BUTTON_INTAKE_IN = 2;
+	public static int BUTTON_SHOULDER_UP = 3;
+	public static int BUTTON_SHOULDER_DOWN = 4;
+	public static double MAX_SPEED_INTAKE = 0.5;
+	public static double MAX_SPEED_SHOULDER = 0.5;
+	public static int CounterIO = 4;
+	public static int BALL_SWITCH_DIO_ID = 6;
+
+/**********************************************************/
 }	
