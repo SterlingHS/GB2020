@@ -21,14 +21,14 @@ public class RobotMap {
     /**********************************************************/
 /*                       Intake                           */
 
-	public static int SHOULDER_CAN_ID = 14;
+	public static int INTAKETWO_CAN_ID = 14;
 	public static int INTAKE_CAN_ID = 15;
 	public static int BUTTON_INTAKE_OUT = 1;
 	public static int BUTTON_INTAKE_IN = 2;
-	public static int BUTTON_SHOULDER_UP = 3;
-	public static int BUTTON_SHOULDER_DOWN = 4;
+	public static int BUTTON_INTAKETWO_UP = 3;
+	public static int BUTTON_INTAKETWO_DOWN = 4;
 	public static double MAX_SPEED_INTAKE = 0.5;
-	public static double MAX_SPEED_SHOULDER = 0.5;
+	public static double MAX_SPEED_INTAKETWO = 0.5;
 	public static int CounterIO = 4;
 	public static int BALL_SWITCH_DIO_ID = 6;
 
