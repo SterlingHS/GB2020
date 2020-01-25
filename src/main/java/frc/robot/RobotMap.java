@@ -15,7 +15,14 @@ public class RobotMap {
     // number and the module. For example you with a rangefinder:
     // public static int rangefinderPort = 1;
     // public static int rangefinderModule = 1;
-        
+  
+	  public static final int DRIVER_USB_PORT_0 = 0;
+    public static final int ACTUATOR_USB_PORT_1 = 1;
+    
+    // Intake
+  	public static int INTAKETWO_CAN_ID = 14;
+  	public static int INTAKE_CAN_ID = 15;
+  	public static double MAX_SPEED_INTAKE = 0.5;
     
     // Joystick configuration
     public static final int DRIVER_USB_PORT_0 = 0;
