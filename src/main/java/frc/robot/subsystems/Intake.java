@@ -36,51 +36,49 @@ public class Intake extends Subsystem {
 
   public void initDefaultCommand()
   {
-
   }
-      public void InIntake() {
+  
+  public void InIntake() {
       stop_intakeone();
       stop_intaketwo();
   }
-      public void OutIntake() {
+  
+  public void OutIntake() {
        stop_intakeone();
         stop_intaketwo();
   }
-    
-      public void stopIntake() {
+  
+  public void stopIntake() 
+  {
       stop_intakeone();
       stop_intaketwo();
-      }
+  }
 
     
-      public void stop_intakeone() {
+  public void stop_intakeone() {
         intakeone.set(ControlMode.PercentOutput, 0);
-      }
+  }
     
-      public void stop_intaketwo() {
+  public void stop_intaketwo() {
         intaketwo.set(ControlMode.PercentOutput, 0);
-      }
+  }
     
-        public void intakeoneIN() {
+  public void intakeoneIN() {
           intakeone.set(ControlMode.PercentOutput, RobotMap.MAX_SPEED_INTAKE);
-      }
+  }
     
-      public void intakeoneOUT() {
+  public void intakeoneOUT() {
         intakeone.set(ControlMode.PercentOutput, -RobotMap.MAX_SPEED_INTAKE);
-      }
+  }
     
-      public void intaketwoIN() {
+  public void intaketwoIN() {
         intaketwo.set(ControlMode.PercentOutput, RobotMap.MAX_SPEED_INTAKETWO);
-        // position += shoulder_counter.get();
-        // shoulder_counter.reset();
-      }
+  }
     
-      public void intaketwoOUT() {
+  public void intaketwoOUT() {
         intaketwo.set(ControlMode.PercentOutput, -RobotMap.MAX_SPEED_INTAKETWO);
-        // position -= shoulder_counter.get();
-        // shoulder_counter.reset();
-
-      
+  }
+}
 
 
 

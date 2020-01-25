@@ -9,9 +9,10 @@
 // it from being updated in the future.
 
 
-package frc.robot.Commands;
+package frc.robot.commands;
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
+import frc.robot.RobotMap;
 
 /**
  *
@@ -43,6 +44,10 @@ public class ArcadeDrive extends Command {
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
+        double forward = Robot.oi.joyDriver.getRawAxis(RobotMap.AXIS_FORWARD);
+        double rotation = Robot.oi.joyDriver.getRawAxis(RobotMap.AXIS_ROTATION);
+	
+        Robot.drivingSystem.arcadeDrive(forward, rotation);
     }
 
     // Make this return true when this Command no longer needs to run execute()

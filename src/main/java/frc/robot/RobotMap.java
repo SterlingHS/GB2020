@@ -15,22 +15,29 @@ public class RobotMap {
     // number and the module. For example you with a rangefinder:
     // public static int rangefinderPort = 1;
     // public static int rangefinderModule = 1;
-		
-	public static final int DRIVER_USB_PORT_0 = 0;
+  
+	  public static final int DRIVER_USB_PORT_0 = 0;
     public static final int ACTUATOR_USB_PORT_1 = 1;
-    /**********************************************************/
-/*                       Intake                           */
+    
+    // Intake
+  	public static int INTAKETWO_CAN_ID = 14;
+  	public static int INTAKE_CAN_ID = 15;
+  	public static double MAX_SPEED_INTAKE = 0.5;
+    
+    // Joystick configuration
+    public static final int DRIVER_USB_PORT_0 = 0;
+    public static final int ACTUATOR_USB_PORT_1 = 1;
+    
+    public static final int AXIS_FORWARD = 1;
+    public static final int AXIS_ROTATION = 2;
 
-	public static int INTAKETWO_CAN_ID = 14;
-	public static int INTAKE_CAN_ID = 15;
-	public static int BUTTON_INTAKE_OUT = 1;
-	public static int BUTTON_INTAKE_IN = 2;
-	public static int BUTTON_INTAKETWO_UP = 3;
-	public static int BUTTON_INTAKETWO_DOWN = 4;
-	public static double MAX_SPEED_INTAKE = 0.5;
-	public static double MAX_SPEED_INTAKETWO = 0.5;
-	public static int CounterIO = 4;
-	public static int BALL_SWITCH_DIO_ID = 6;
+    // Hopper configuration
+    public static final int HOPPER1_CAN_ID = 20;
+    public static final int HOPPER2_CAN_ID = 21;
 
-/**********************************************************/
+    public static final int HOPPER1_DIO_ID = 0;
+    public static final int HOPPER2_DIO_ID = 1;
+
+    public static final double HOPPER1_SPEED = 0.5;
+    public static final double HOPPER2_SPEED = 0.5;
 }	
