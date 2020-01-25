@@ -91,3 +91,12 @@ inputShooterCtr.setInverted(false);
 
 }
 
+public void shoot() 
+  {
+      shooterCTR.set(ControlMode.PercentOutput, 1);
+  }
+
+  public void in()
+   {
+       inputShooterCtr.set(ControlMode.PercentOutput,1);
+ }
