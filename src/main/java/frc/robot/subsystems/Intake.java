@@ -38,12 +38,20 @@ public class Intake extends Subsystem {
   {
 
   }
-
-
-    public void stop_all() {
-        stop_intakeone();
+      public void InIntake() {
+      stop_intakeone();
+      stop_intaketwo();
+  }
+      public void OutIntake() {
+       stop_intakeone();
         stop_intaketwo();
+  }
+    
+      public void stopIntake() {
+      stop_intakeone();
+      stop_intaketwo();
       }
+
     
       public void stop_intakeone() {
         intakeone.set(ControlMode.PercentOutput, 0);
@@ -53,30 +61,26 @@ public class Intake extends Subsystem {
         intaketwo.set(ControlMode.PercentOutput, 0);
       }
     
-        public void in() {
+        public void intakeoneIN() {
           intakeone.set(ControlMode.PercentOutput, RobotMap.MAX_SPEED_INTAKE);
       }
     
-      public void out() {
+      public void intakeoneOUT() {
         intakeone.set(ControlMode.PercentOutput, -RobotMap.MAX_SPEED_INTAKE);
       }
     
-      public void up() {
+      public void intaketwoIN() {
         intaketwo.set(ControlMode.PercentOutput, RobotMap.MAX_SPEED_INTAKETWO);
         // position += shoulder_counter.get();
         // shoulder_counter.reset();
       }
     
-      public void down() {
+      public void intaketwoOUT() {
         intaketwo.set(ControlMode.PercentOutput, -RobotMap.MAX_SPEED_INTAKETWO);
         // position -= shoulder_counter.get();
         // shoulder_counter.reset();
-      }
-    
-      public boolean is_ball_in()
-      {
-        return ball_switch.get();
-      }
+
+      
 
 
 
