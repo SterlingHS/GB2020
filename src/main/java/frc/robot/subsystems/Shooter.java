@@ -100,3 +100,8 @@ public void shoot()
    {
        inputShooterCtr.set(ControlMode.PercentOutput,1);
  }
+ 
+  public void out()
+  {
+      
+  }
