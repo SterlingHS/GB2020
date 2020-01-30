@@ -8,11 +8,13 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in the future.
 
-
 package frc.robot.commands;
+
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
 import frc.robot.RobotMap;
+import io.github.pseudoresonance.pixy2api.Pixy2CCC.Block;
+import edu.wpi.first.wpilibj.command.Subsystem;
 
 public class getClosestBall extends Command{
     public getClosestBall() {
@@ -30,20 +32,21 @@ public class getClosestBall extends Command{
         // Called just before this Command runs the first time
         @Override
         protected void initialize() {
+            Block block;
         }
     
         // Called repeatedly when this Command is scheduled to run
         @Override
         protected void execute() {
-            Robot.pixyTracker.getBiggestBlock();
-
-
+            block=Robot.pixyTracker.getBiggestBlock();
+            x=block.getx();
+            y=block.gety();
+            move(x,y);
         }
     
         // Make this return true when this Command no longer needs to run execute()
         @Override
-        protected boolean isFinished() 
-        { 
+        protected boolean isFinished() { 
             return false;
         }
     
