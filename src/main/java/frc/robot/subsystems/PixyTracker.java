@@ -6,6 +6,7 @@ import java.util.ArrayList;
 
 import io.github.pseudoresonance.pixy2api.*;
 import io.github.pseudoresonance.pixy2api.Pixy2CCC.Block;
+import edu.wpi.first.wpilibj.command.Subsystem;
 
 public class PixyTracker {
 
@@ -23,7 +24,7 @@ public class PixyTracker {
 	}
 
 
-	public static Block getBiggestBlock() {
+	public Block getBiggestBlock() {
 		// Gets the number of "blocks", identified targets, that match signature 1 on the Pixy2,
 		// does not wait for new data if none is available,
 		// and limits the number of returned blocks to 25, for a slight increase in efficiency
