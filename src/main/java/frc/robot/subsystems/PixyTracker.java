@@ -1,30 +1,46 @@
-package frc.robot.subsystems;
+/*----------------------------------------------------------------------------*/
+/* Copyright (c) 2018 FIRST. All Rights Reserved.                             */
+/* Open Source Software - may be modified and shared by FRC teams. The code   */
+/* must be accompanied by the FIRST BSD license file in the root directory of */
+/* the project.                                                               */
+/*----------------------------------------------------------------------------*/
 
-import io.github.pseudoresonance.pixy2api.links.SPILink;
+package frc.robot.subsystems;
 
 import java.util.ArrayList;
 
-import io.github.pseudoresonance.pixy2api.*;
-import io.github.pseudoresonance.pixy2api.Pixy2CCC.Block;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import io.github.pseudoresonance.pixy2api.Pixy2;
+import io.github.pseudoresonance.pixy2api.Pixy2CCC;
+import io.github.pseudoresonance.pixy2api.Pixy2CCC.Block;
+import io.github.pseudoresonance.pixy2api.links.SPILink;
 
-public class PixyTracker extends Subsystem{
+/**
+ * Add your docs here.
+ */
+public class PixyTracker extends Subsystem {
 
-	private static Pixy2 pixy = null;
+  private static Pixy2 pixy = null;
 
-	public static void setup() {
-		pixy = Pixy2.createInstance(new SPILink()); // Creates a new Pixy2 camera using SPILink
+  @Override
+  public void initDefaultCommand() {
+    // Set the default command for a subsystem here.
+    // setDefaultCommand(new MySpecialCommand());
+    pixy = Pixy2.createInstance(new SPILink()); // Creates a new Pixy2 camera using SPILink
 		pixy.init(); // Initializes the camera and prepares to send/receive data
 		pixy.setLamp((byte) 1, (byte) 1); // Turns the LEDs on
 		pixy.setLED(255, 255, 255); // Sets the RGB LED to full white
-	}
+  }
 
-	public static Pixy2 getPixyCamera1() {
+  // Put methods for controlling this subsystem
+  // here. Call these from Commands.
+
+  public static Pixy2 getPixyCamera1() {
 		return pixy;
-	}
-
-
-	public static Block getBiggestBlock() {
+  }
+  
+  public static Block getBiggestBlock() 
+  {
 		// Gets the number of "blocks", identified targets, that match signature 1 on the Pixy2,
 		// does not wait for new data if none is available,
 		// and limits the number of returned blocks to 25, for a slight increase in efficiency
@@ -44,11 +60,4 @@ public class PixyTracker extends Subsystem{
 		}
 		return largestBlock;
 	}
-
-	@Override
-	protected void initDefaultCommand() {
-		// TODO Auto-generated method stub
-
-	}
-
 }
