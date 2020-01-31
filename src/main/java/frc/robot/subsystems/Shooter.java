@@ -139,7 +139,10 @@ public class Shooter extends Subsystem
     public void normalCounter()
     {
         normalCounter.start();
-        normalcounter.stop();
-        
-    }
+        normalCounter.stop();
+        normalCounter.reset();
+        int count = normalCounter.get();
+        boolean stopped = normalCounter.getStopped();
+        normalCounter.setUpdateWhenEmpty(true);
+    }  
 }
