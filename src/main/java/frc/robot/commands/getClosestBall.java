@@ -12,6 +12,7 @@ package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
+import frc.robot.subsystems.DrivingSystem;
 import frc.robot.subsystems.PixyTracker;
 import io.github.pseudoresonance.pixy2api.Pixy2CCC.Block;
 
@@ -39,6 +40,12 @@ public class getClosestBall extends Command {
     @Override
     protected void execute() {
             biggestBlock = PixyTracker.getBiggestBlock();
+            int blockY = biggestBlock.getY();
+            int blockX = biggestBlock.getX();
+            if (blockY < 10)
+            {
+                DrivingSystem.arcadeDrive(final double stop, final double brake);
+            }
         }
     
         // Make this return true when this Command no longer needs to run execute()
