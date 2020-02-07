@@ -23,4 +23,5 @@ public class RobotMap {
     // Variables for Shooter
     public static final double Shooter_Speed = 1;
     public static final double inputShooter_Speed = 0.5;
+    public static final double rotateShooter_Speed = 0.2;
 }	
