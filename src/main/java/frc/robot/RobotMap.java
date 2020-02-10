@@ -40,4 +40,14 @@ public class RobotMap {
 
     public static final double HOPPER1_SPEED = 0.5;
     public static final double HOPPER2_SPEED = 0.5;
+		
+	public static final int DRIVER_USB_PORT_0 = 0;
+    public static final int ACTUATOR_USB_PORT_1 = 1;
+    public static final int SHOOTER_DIO_ID = 1;
+    
+    // Variables for Shooter
+    public static final double Shooter_Speed = 1;
+    public static final double inputShooter_Speed = 0.5;
+    public static final double rotateShooter_Speed = 0.2;
+    public static double ball_counter = 0;
 }	
