@@ -61,6 +61,4 @@ public class ActivateShooter extends Command {
     @Override
     protected void interrupted() {
     }
-
-    public void 
 }
