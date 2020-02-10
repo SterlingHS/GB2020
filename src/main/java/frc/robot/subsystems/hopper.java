@@ -12,8 +12,6 @@ import frc.robot.RobotMap;
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 import com.ctre.phoenix.motorcontrol.ControlMode;
 import edu.wpi.first.wpilibj.DigitalInput;
-// import edu.wpi.first.wpilibj.Counter;
-// import edu.wpi.first.wpilibj.DigitalInput;
 
 /**
  * Add your docs here.
