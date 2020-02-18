@@ -44,7 +44,7 @@ public class getClosestBall extends Command {
             // nt blockX = biggestBlock.getX();
             if (blockY < 10)
             {
-                Robot.drivingSystem.arcadeDrive(0, 0);
+                Robot.drivingSystem.arcadeDrive(0, 0, 1);
             }
         }
     

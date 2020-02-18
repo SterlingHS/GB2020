@@ -50,8 +50,8 @@ public class OI {
     public OI() {
         
 
-        joyCo = new Joystick(RobotMap.joyCoPort);
-        joyDriver = new Joystick(RobotMap.joyDriverPort);
+        joyCo = new Joystick(RobotMap.JOYCO_USB_PORT);
+        joyDriver = new Joystick(RobotMap.JOYDRIVER_USB_PORT);
 
         intakeBt = new JoystickButton(joyDriver, RobotMap.driverButtonIntakeBt);
         intakeBt.whileHeld(new IntakeBalls());
