@@ -28,9 +28,7 @@ public class RobotMap {
     public static int DRIVETRAIN_LEFT_2 = 11;
     public static int DRIVETRAIN_RIGHT_1 = 12;
     public static int DRIVETRAIN_RIGHT_2 = 13;
-    public static int FRONTINTAKEFAST_CAN_ID = 14;
     public static int FRONTINTAKE_CAN_ID = 15;
-    public static int REARINTAKE_CAN_ID = 3;
     public static final int HOPPER1_CAN_ID = 20;
     public static final int HOPPER2_CAN_ID = 21;
 
