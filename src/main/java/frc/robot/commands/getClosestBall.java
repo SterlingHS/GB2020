@@ -41,7 +41,7 @@ public class getClosestBall extends Command {
     protected void execute() {
             biggestBlock = PixyTracker.getBiggestBlock();
             int blockY = biggestBlock.getY();
-            int blockX = biggestBlock.getX();
+            // nt blockX = biggestBlock.getX();
             if (blockY < 10)
             {
                 Robot.drivingSystem.arcadeDrive(0, 0);

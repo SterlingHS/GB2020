@@ -16,6 +16,11 @@ public class RobotMap {
     // public static int rangefinderPort = 1;
     // public static int rangefinderModule = 1;
     
+    // Joysitck
+    public static int joyDriverPort = 0;
+    public static int joyCoPort = 1;
+    public static int driverButtonIntakeBt = 1;
+
     // Intake
   	public static int FRONTINTAKEFAST_CAN_ID = 14;
     public static int FRONTINTAKE_CAN_ID = 15;
