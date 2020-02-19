@@ -3,12 +3,12 @@ package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.RobotMap;
-import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
+import com.ctre.phoenix.motorcontrol.can.WPI_VictorSPX;
 import com.ctre.phoenix.motorcontrol.ControlMode;
 
 public class Intake extends Subsystem {
 
-  WPI_TalonSRX frontintake = new WPI_TalonSRX(RobotMap.FRONTINTAKE_CAN_ID);
+  WPI_VictorSPX frontintake = new WPI_VictorSPX(RobotMap.FRONTINTAKE_CAN_ID);
 
   public void initDefaultCommand()
   {

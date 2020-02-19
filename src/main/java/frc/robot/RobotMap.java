@@ -24,10 +24,10 @@ public class RobotMap {
     public static final int AXIS_ROTATION = 2;
 
     // CAN IDs
-    public static int DRIVETRAIN_LEFT_1 = 10;
-    public static int DRIVETRAIN_LEFT_2 = 11;
-    public static int DRIVETRAIN_RIGHT_1 = 12;
-    public static int DRIVETRAIN_RIGHT_2 = 13;
+    public static int DRIVETRAIN_LEFT_1 = 11;
+    public static int DRIVETRAIN_LEFT_2 = 12;
+    public static int DRIVETRAIN_RIGHT_1 = 13;
+    public static int DRIVETRAIN_RIGHT_2 = 14;
     public static int FRONTINTAKE_CAN_ID = 15;
     public static final int HOPPER1_CAN_ID = 20;
     public static final int HOPPER2_CAN_ID = 21;

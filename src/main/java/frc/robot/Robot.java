@@ -31,11 +31,11 @@ public static PixyTracker pixyTracker;
     public void robotInit() {
 
         intake = new Intake();
-        shooter = new Shooter();
-        climber = new Climber();
-        wheelOfFortune = new WheelOfFortune();
+        // shooter = new Shooter();
+        // climber = new Climber();
+        // wheelOfFortune = new WheelOfFortune();
         drivingSystem = new DrivingSystem();
-        pixyTracker = new PixyTracker();
+        // pixyTracker = new PixyTracker();
 
         // OI must be constructed after subsystems. If the OI creates Commands
         //(which it very likely will), subsystems are not guaranteed to be
