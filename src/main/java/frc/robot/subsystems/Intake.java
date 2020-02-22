@@ -32,7 +32,6 @@ import com.ctre.phoenix.motorcontrol.ControlMode;
 public class Intake extends Subsystem {
 
   WPI_TalonSRX frontintake = new WPI_TalonSRX(RobotMap.FRONTINTAKE_CAN_ID);
-  WPI_TalonSRX frontintakefast = new WPI_TalonSRX(RobotMap.FRONTINTAKEFAST_CAN_ID);
   WPI_TalonSRX rearintake = new WPI_TalonSRX(RobotMap.REARINTAKE_CAN_ID);
 
   public void initDefaultCommand()
@@ -41,21 +40,18 @@ public class Intake extends Subsystem {
   
   public void InIntake() {
       frontintakeIN();
-      frontintakefastIN();
       rearintakeIN();
   }
   
   public void OutIntake() {
        frontintakeOUT();
-       frontintakefastOUT();
-      // rearintakeOUT();
+      
 
   }
   
   public void stopIntake() 
   {
       stop_frontintake();
-      stop_frontintakefast();
       stop_rearintake();
   }
 
@@ -63,10 +59,7 @@ public class Intake extends Subsystem {
   public void stop_frontintake() {
     frontintake.set(ControlMode.PercentOutput, 0);
   }
-    
-  public void stop_frontintakefast() {
-        frontintakefast.set(ControlMode.PercentOutput, 0);
-  }
+
   public void stop_rearintake() {
       rearintake.set(ControlMode.PercentOutput, 0);
 }
@@ -78,22 +71,9 @@ public class Intake extends Subsystem {
   public void frontintakeOUT() {
     frontintake.set(ControlMode.PercentOutput, -RobotMap.MAX_SPEED_FRONTINTAKE);
   }
-    
-  public void frontintakefastIN() {
-        frontintakefast.set(ControlMode.PercentOutput, RobotMap.MAX_SPEED_FRONTINTAKEFAST);
-  }
-    
-  public void frontintakefastOUT() {
-        frontintakefast.set(ControlMode.PercentOutput, -RobotMap.MAX_SPEED_FRONTINTAKEFAST);
-  }
 
-public void rearintakeIN() {
+  public void rearintakeIN() {
       rearintake.set(ControlMode.PercentOutput, RobotMap.MAX_SPEED_REARINTAKE);
   }
-    
-  public void rearintakeOUT() {
-    rearintake.set(ControlMode.PercentOutput, -RobotMap.MAX_SPEED_REARINTAKE);
-  }
 }
-
 

@@ -17,11 +17,9 @@ public class RobotMap {
     // public static int rangefinderModule = 1;
     
     // Intake
-  	public static int FRONTINTAKEFAST_CAN_ID = 14;
     public static int FRONTINTAKE_CAN_ID = 15;
     public static int REARINTAKE_CAN_ID = 3;
     public static double MAX_SPEED_FRONTINTAKE = 0.5;
-    public static double MAX_SPEED_FRONTINTAKEFAST = 0.9;
     public static double MAX_SPEED_REARINTAKE = 0.2;
     
     // Joystick configuration
