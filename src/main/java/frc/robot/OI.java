@@ -38,10 +38,7 @@ public class OI {
 
     
     public JoystickButton intakeBt;
-    public JoystickButton activetaShooterBt;
-    public JoystickButton elevateShoulderBt;
-    public JoystickButton elevateRobotBt;
-    public JoystickButton rotateWheelBy;
+    public JoystickButton intake_to_transferupBt;
     public Joystick joyDriver;
     public Joystick joyCo;
 
@@ -55,6 +52,8 @@ public class OI {
 
         intakeBt = new JoystickButton(joyDriver, RobotMap.driverButtonIntakeBt);
         intakeBt.whileHeld(new IntakeBalls());
+        intake_to_transferupBt = new JoystickButton(joyDriver, RobotMap.driverButtonIntake_to_transferupBt);
+        intake_to_transferupBt.whileHeld(new IntakeBalls());
 
 
         // SmartDashboard Buttons

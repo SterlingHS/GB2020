@@ -1,6 +1,7 @@
 
 package frc.robot.subsystems;
 
+import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.RobotMap;
 import com.ctre.phoenix.motorcontrol.can.WPI_VictorSPX;
@@ -9,6 +10,9 @@ import com.ctre.phoenix.motorcontrol.ControlMode;
 public class Intake extends Subsystem {
 
   WPI_VictorSPX frontintake = new WPI_VictorSPX(RobotMap.FRONTINTAKE_CAN_ID);
+  WPI_VictorSPX roller = new WPI_VictorSPX(RobotMap.ROLLER_CAN_ID);
+  WPI_VictorSPX transferup = new WPI_VictorSPX(RobotMap.TRANSFERUP_CAN_ID);
+  private DigitalInput ball_sensor_transferup = new DigitalInput(RobotMap.TRANSFERUP_DIO_ID);
 
   public void initDefaultCommand()
   {
@@ -26,6 +30,38 @@ public class Intake extends Subsystem {
     frontintake.set(ControlMode.PercentOutput, -RobotMap.MAX_SPEED_FRONTINTAKE);
   }
     
+  public void stop_roller() {
+    roller.set(0);
+  }
+
+  public void roller_IN() {
+    roller.set(ControlMode.PercentOutput, RobotMap.MAX_SPEED_ROLLER);
+  }
+
+  public void roller_OUT() {
+    roller.set(ControlMode.PercentOutput, -RobotMap.MAX_SPEED_ROLLER);
+  }
+
+  public void stop_transferup() {
+    transferup.set(0);
+  }
+
+  public void transferup_UP(double speed) {
+    transferup.set(ControlMode.PercentOutput, speed);
+  }
+
+  public void transferup_DOWN() {
+    transferup.set(ControlMode.PercentOutput, -RobotMap.MAX_SPEED_TRANSFERUP);
+  }
+
+  public boolean is_ball_transferup() {
+    return ball_sensor_transferup.get();
+  }
+
+  public void transferup_to_sensor() {
+    if (is_ball_transferup()) stop_transferup();
+    else transferup_UP(RobotMap.STOCK_SPEED_TRANSFERUP);
+  }
 }
 
 

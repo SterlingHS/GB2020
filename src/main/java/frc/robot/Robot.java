@@ -24,7 +24,6 @@ public static Shooter shooter;
 public static Climber climber;
 public static WheelOfFortune wheelOfFortune;
 public static DrivingSystem drivingSystem;
-public static Hopper hopper;
 public static PixyTracker pixyTracker;
 
     @Override
