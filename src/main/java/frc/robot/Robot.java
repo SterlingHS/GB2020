@@ -93,5 +93,18 @@ public static PixyTracker pixyTracker;
     @Override
     public void teleopPeriodic() {
         Scheduler.getInstance().run();
+        update_smartboard();
+    }
+
+    public void update_smartboard(){
+        // SmartDashboard.putBoolean("Rotator Right", rotator...);
+        SmartDashboard.putBoolean("Transfer Up Ball", intake.is_ball_transferup());
+        SmartDashboard.putBoolean("Left Rotator", shooter.is_left_rotator());
+        SmartDashboard.putBoolean("Right Rotator", shooter.is_right_rotator());
+        SmartDashboard.putNumber("Limelight TX", shooter.Read_Limelight_tx());
+        SmartDashboard.putNumber("Limelight TY", shooter.Read_Limelight_ty());
+        SmartDashboard.putNumber("Limelight TA", shooter.Read_Limelight_ta());
+        SmartDashboard.putNumber("Limelight TV", shooter.Read_Limelight_tv());
+
     }
 }

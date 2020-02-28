@@ -12,7 +12,8 @@ public class Intake extends Subsystem {
   WPI_VictorSPX frontintake = new WPI_VictorSPX(RobotMap.FRONTINTAKE_CAN_ID);
   WPI_VictorSPX roller = new WPI_VictorSPX(RobotMap.ROLLER_CAN_ID);
   WPI_VictorSPX transferup = new WPI_VictorSPX(RobotMap.TRANSFERUP_CAN_ID);
-  private DigitalInput ball_sensor_transferup = new DigitalInput(RobotMap.TRANSFERUP_DIO_ID);
+  DigitalInput ball_sensor_transferup = new DigitalInput(RobotMap.TRANSFERUP_DIO_ID);
+  int number_of_balls = RobotMap.NUMBER_OF_BALLS_INIT;
 
   public void initDefaultCommand()
   {

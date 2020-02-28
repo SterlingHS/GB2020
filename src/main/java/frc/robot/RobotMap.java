@@ -32,6 +32,13 @@ public class RobotMap {
     public static int FRONTINTAKE_CAN_ID = 19;
     public static int ROLLER_CAN_ID = 21;
     public static int TRANSFERUP_CAN_ID = 20;
+    public static int SHOOTER1_CAN_ID = 16;
+    public static int SHOOTER2_CAN_ID = 17;
+    public static int ROTATOR_CAN_ID = 15;
+
+    //DIO IDs
+    public static int LEFT_SWITCH_DIO = 9;
+    public static int RIGHT_SWITCH_DIO = 8;
 
     // Driver configuration
     public static double DRIVER_SLOWDOWN = .6; 
@@ -42,9 +49,10 @@ public class RobotMap {
     public static double MAX_SPEED_TRANSFERUP = 0.6;
     public static double STOCK_SPEED_TRANSFERUP = 0.4;
     public static int TRANSFERUP_DIO_ID = 7;
+    public static int NUMBER_OF_BALLS_INIT = 0;
     
     // Variables for Shooter
-    public static final double Shooter_Speed = 0.6;
+    public static final double Shooter_MAX_Speed = 1;
     public static final double inputShooter_Speed = 0.5;
     public static final double rotateShooter_Speed = 0.2;
     public static double ball_counter = 0;

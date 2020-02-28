@@ -53,7 +53,7 @@ public class OI {
         intakeBt = new JoystickButton(joyDriver, RobotMap.driverButtonIntakeBt);
         intakeBt.whileHeld(new IntakeBalls());
         intake_to_transferupBt = new JoystickButton(joyDriver, RobotMap.driverButtonIntake_to_transferupBt);
-        intake_to_transferupBt.whileHeld(new IntakeBalls());
+        intake_to_transferupBt.whileHeld(new IntakeBallsToTransferup());
 
 
         // SmartDashboard Buttons
