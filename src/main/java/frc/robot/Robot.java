@@ -30,7 +30,7 @@ public static PixyTracker pixyTracker;
     public void robotInit() {
 
         intake = new Intake();
-        // shooter = new Shooter();
+        shooter = new Shooter();
         // climber = new Climber();
         // wheelOfFortune = new WheelOfFortune();
         drivingSystem = new DrivingSystem();
@@ -97,7 +97,7 @@ public static PixyTracker pixyTracker;
     }
 
     public void update_smartboard(){
-        // SmartDashboard.putBoolean("Rotator Right", rotator...);
+        //SmartDashboard.putBoolean("Rotator Right", rotator...);
         SmartDashboard.putBoolean("Transfer Up Ball", intake.is_ball_transferup());
         SmartDashboard.putBoolean("Left Rotator", shooter.is_left_rotator());
         SmartDashboard.putBoolean("Right Rotator", shooter.is_right_rotator());

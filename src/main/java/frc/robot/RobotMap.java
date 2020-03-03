@@ -21,6 +21,7 @@ public class RobotMap {
     public static int JOYCO_USB_PORT = 1;
     public static int driverButtonIntakeBt = 1;
     public static int driverButtonIntake_to_transferupBt = 2;
+    public static int driverButtonActiveShooter = 6;
     public static final int AXIS_FORWARD = 1;
     public static final int AXIS_ROTATION = 2;
 
@@ -39,6 +40,7 @@ public class RobotMap {
     //DIO IDs
     public static int LEFT_SWITCH_DIO = 9;
     public static int RIGHT_SWITCH_DIO = 8;
+    public static int TRANSFERUP_DIO_ID = 7;
 
     // Driver configuration
     public static double DRIVER_SLOWDOWN = .6; 
@@ -47,13 +49,13 @@ public class RobotMap {
     public static double MAX_SPEED_FRONTINTAKE = 0.5;
     public static double MAX_SPEED_ROLLER = 0.5; 
     public static double MAX_SPEED_TRANSFERUP = 0.6;
-    public static double STOCK_SPEED_TRANSFERUP = 0.4;
-    public static int TRANSFERUP_DIO_ID = 7;
+    public static double STOCK_SPEED_TRANSFERUP = 0.3;
     public static int NUMBER_OF_BALLS_INIT = 0;
     
     // Variables for Shooter
     public static final double Shooter_MAX_Speed = 1;
     public static final double inputShooter_Speed = 0.5;
     public static final double rotateShooter_Speed = 0.2;
+    public static final double ActivateShooterSpeed = 0.6;
     public static double ball_counter = 0;
 }	

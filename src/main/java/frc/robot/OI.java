@@ -39,6 +39,7 @@ public class OI {
     
     public JoystickButton intakeBt;
     public JoystickButton intake_to_transferupBt;
+    public JoystickButton shootBt;
     public Joystick joyDriver;
     public Joystick joyCo;
 
@@ -55,11 +56,14 @@ public class OI {
         intake_to_transferupBt = new JoystickButton(joyDriver, RobotMap.driverButtonIntake_to_transferupBt);
         intake_to_transferupBt.whileHeld(new IntakeBallsToTransferup());
 
+        shootBt = new JoystickButton(joyDriver,RobotMap.driverButtonActiveShooter);
+        shootBt.whileHeld(new ActivateShooter());
 
         // SmartDashboard Buttons
         SmartDashboard.putData("Autonomous Command", new AutonomousCommand());
         SmartDashboard.putData("IntakeBalls", new IntakeBalls());
-        SmartDashboard.putData("ArcadeDrive", new ArcadeDrive());
+        SmartDashboard.putData("ActivateShooter", new ActivateShooter());
+    
     }
         
     public Joystick getJoyDriver() {

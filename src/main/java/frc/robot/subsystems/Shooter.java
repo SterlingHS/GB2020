@@ -11,9 +11,11 @@
 package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
+
+import com.ctre.phoenix.motorcontrol.can.WPI_VictorSPX;
+
 import edu.wpi.first.networktables.NetworkTableInstance;
 import edu.wpi.first.wpilibj.DigitalInput;
-import edu.wpi.first.wpilibj.PWMTalonSRX;
 import edu.wpi.first.wpilibj.SpeedControllerGroup;
 import frc.robot.RobotMap;
 
@@ -25,10 +27,10 @@ import frc.robot.RobotMap;
  */
 public class Shooter extends Subsystem 
 {
-        private PWMTalonSRX shooterCtr1 = new PWMTalonSRX(RobotMap.SHOOTER1_CAN_ID);
-        private PWMTalonSRX shooterCtr2 = new PWMTalonSRX(RobotMap.SHOOTER2_CAN_ID);
+        private WPI_VictorSPX shooterCtr1 = new WPI_VictorSPX(RobotMap.SHOOTER1_CAN_ID);
+        private WPI_VictorSPX shooterCtr2 = new WPI_VictorSPX(RobotMap.SHOOTER2_CAN_ID);
         private SpeedControllerGroup shooterCtr = new SpeedControllerGroup(shooterCtr1, shooterCtr2);
-        private PWMTalonSRX rotateShooterCtr = new PWMTalonSRX(RobotMap.ROTATOR_CAN_ID);
+        private WPI_VictorSPX rotateShooterCtr = new WPI_VictorSPX(RobotMap.ROTATOR_CAN_ID);
 
         private DigitalInput left_switch_rotator = new DigitalInput(RobotMap.LEFT_SWITCH_DIO);
         private DigitalInput right_switch_rotator = new DigitalInput(RobotMap.RIGHT_SWITCH_DIO);
@@ -58,8 +60,8 @@ public class Shooter extends Subsystem
     // Methods for shooter
     public void shoot(double speed) 
     {
-        speed = Math.max(speed,RobotMap.Shooter_MAX_Speed);
-        shooterCtr.set(speed);
+        //speed = Math.max(speed,RobotMap.Shooter_MAX_Speed);
+        shooterCtr.set(-speed);
     }
 
     public void clean_shoot() // shoot inward to "clean" the shooter
