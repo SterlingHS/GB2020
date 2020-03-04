@@ -52,7 +52,8 @@ public class PixyTracker extends Subsystem {
 		{
 			ArrayList<Block> blocks = pixy.getCCC().getBlocks(); // Gets a list of all blocks found by the Pixy2
 			Block largestBlock = null;
-			for (Block block : blocks) { // Loops through all blocks and finds the widest one
+			for (Block block : blocks) 
+			{ // Loops through all blocks and finds the widest one
 				if (largestBlock == null) {
 					largestBlock = block;
 				} else if (block.getWidth() > largestBlock.getWidth()) {
@@ -62,6 +63,7 @@ public class PixyTracker extends Subsystem {
 			x = largestBlock.getX();
 			y = largestBlock.getY();
 			ball = true;
+			}
 		}
 		else
 		{

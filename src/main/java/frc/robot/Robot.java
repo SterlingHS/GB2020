@@ -105,6 +105,9 @@ public static PixyTracker pixyTracker;
         SmartDashboard.putNumber("Limelight TY", shooter.Read_Limelight_ty());
         SmartDashboard.putNumber("Limelight TA", shooter.Read_Limelight_ta());
         SmartDashboard.putNumber("Limelight TV", shooter.Read_Limelight_tv());
-
+        SmartDashboard.putNumber("Speed Shooter", shooter.Read_Speed_Shooter());
+        SmartDashboard.putNumber("Distance to wall",shooter.Distance_to_target());
+        SmartDashboard.putNumber("Power Percent",shooter.percent_from_distance());
+        SmartDashboard.putNumber("Power Speed",shooter.speed_from_distance());
     }
 }

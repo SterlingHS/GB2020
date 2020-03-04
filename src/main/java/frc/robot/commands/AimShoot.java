@@ -50,7 +50,7 @@ public class AimShoot extends Command {
         double speed = 0.6;
         if(tv == 1)
         {
-            Robot.shooter.shoot(speed);
+            Robot.shooter.shootPercent(speed);
             if (tx < 2 && tx > -2) Robot.intake.transferup_UP(0.7); //shoot!
             else
             {
