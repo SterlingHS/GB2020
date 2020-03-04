@@ -177,8 +177,10 @@ public class Shooter extends Subsystem {
         {
             double distance = Distance_to_target();
             // linear approximation
-            double slope=(.9-.4)/(20-10);
-            double percent = slope*(distance-10)+.4;
+            //double slope=(.9-.4)/(20-10);
+            //double percent = slope*(distance-10)+.4;
+            // Exponential Approximation
+            double percent=((18.825*Math.pow(Math.E, .0754*distance))/100);
             double speed = percent*200/0.9;
             return speed;
         }

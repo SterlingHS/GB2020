@@ -44,7 +44,7 @@ public class ActivateShooter extends Command {
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
-        Robot.shooter.shootSpeed(-Robot.shooter.speed_from_distance()*1.3);
+        Robot.shooter.shootSpeed(-Robot.shooter.speed_from_distance());
         Robot.intake.transferup_UP(.7);
         Robot.intake.roller_IN();
         Robot.intake.frontintakeIN();
