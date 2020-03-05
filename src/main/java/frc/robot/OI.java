@@ -57,7 +57,8 @@ public class OI {
         intake_to_transferupBt.whileHeld(new IntakeBallsToTransferup());
 
         shootBt = new JoystickButton(joyDriver,RobotMap.driverButtonActiveShooter);
-        shootBt.whileHeld(new ActivateShooter());
+        shootBt.whileHeld(new AimShoot());
+        // shootBt.whenPressed(new ActivateShooter());
 
         // SmartDashboard Buttons
         SmartDashboard.putData("Autonomous Command", new AutonomousCommand());

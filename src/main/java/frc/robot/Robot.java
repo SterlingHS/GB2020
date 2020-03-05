@@ -47,6 +47,8 @@ public static PixyTracker pixyTracker;
         // Add commands to Autonomous Sendable Chooser
         chooser.setDefaultOption("Autonomous Command", new AutonomousCommand());
         SmartDashboard.putData("Auto mode", chooser);
+        SmartDashboard.putNumber("Set Speed",100);
+        SmartDashboard.putNumber("Error", 0);
     }
 
     /**

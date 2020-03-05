@@ -6,7 +6,6 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.RobotMap;
 import com.ctre.phoenix.motorcontrol.can.WPI_VictorSPX;
 import com.ctre.phoenix.motorcontrol.ControlMode;
-import frc.robot.subsystems.PixyTracker;
 
 public class Intake extends Subsystem {
 
@@ -23,16 +22,16 @@ public class Intake extends Subsystem {
   public void stop_frontintake() {
     frontintake.set(ControlMode.PercentOutput, 0);
   }
-  if (largestBlock==True)
-  {
-    public void frontintakeIN() {
-       frontintake.set(ControlMode.PercentOutput, RobotMap.MAX_SPEED_FRONTINTAKE);
-    }
-    
-   public void frontintakeOUT() {
-     frontintake.set(ControlMode.PercentOutput, -RobotMap.MAX_SPEED_FRONTINTAKE);
-    }
+  
+  
+  public void frontintakeIN() {
+    frontintake.set(ControlMode.PercentOutput, RobotMap.MAX_SPEED_FRONTINTAKE);
   }
+    
+  public void frontintakeOUT() {
+    frontintake.set(ControlMode.PercentOutput, -RobotMap.MAX_SPEED_FRONTINTAKE);
+  }
+  
     
   public void stop_roller() {
     roller.set(0);

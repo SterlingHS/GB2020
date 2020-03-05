@@ -11,6 +11,7 @@
 package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 import com.ctre.phoenix.motorcontrol.can.WPI_VictorSPX;
 
@@ -57,10 +58,15 @@ public class Shooter extends Subsystem {
     // here. Call these from Commands.
 
     // Methods for shooter
-    public void shootSpeed(double speed) 
+    public void shootSpeed(double desired_speed) 
     {
-        double percent=speed/RobotMap.MAX_SHOOTER_SPEED;
-        shooterCtr.set(percent);
+        //double percent=speed/RobotMap.MAX_SHOOTER_SPEED;
+        double current_speed = Read_Speed_Shooter();
+        double error=desired_speed-current_speed;
+        double percent=(desired_speed+error)/RobotMap.MAX_SHOOTER_SPEED;
+        SmartDashboard.putNumber("Error", error);
+        if(percent>1) percent = 1;
+        shooterCtr.set(-percent);
     }
 
     public void shootPercent(double speed) 
@@ -180,7 +186,7 @@ public class Shooter extends Subsystem {
             //double slope=(.9-.4)/(20-10);
             //double percent = slope*(distance-10)+.4;
             // Exponential Approximation
-            double percent=((18.825*Math.pow(Math.E, .0754*distance))/100);
+            double percent=((20*Math.pow(Math.E, .0754*distance))/100);
             double speed = percent*200/0.9;
             return speed;
         }

@@ -57,8 +57,8 @@ public class RobotMap {
     // Variables for Shooter
     public static final double Shooter_MAX_Speed = 1;
     public static final double inputShooter_Speed = 0.5;
-    public static final double rotateShooter_Speed = 0.2;
+    public static final double rotateShooter_Speed = 0.7;
     public static final double ActivateShooterSpeed = 1;
     public static double ball_counter = 0;
-    public static final double MAX_SHOOTER_SPEED = 330;
+    public static final double MAX_SHOOTER_SPEED = 350;
 }	

@@ -47,18 +47,21 @@ public class AimShoot extends Command {
 
         double tx = Robot.shooter.Read_Limelight_tx();
         double tv = Robot.shooter.Read_Limelight_tv();
-        double speed = 0.6;
+        double speed;
         if(tv == 1)
-        {
+        {   
+            speed = Robot.shooter.speed_from_distance();
+            // TEST IF DISTANCE IS TOO FAR
             Robot.shooter.shootPercent(speed);
-            if (tx < 2 && tx > -2) Robot.intake.transferup_UP(0.7); //shoot!
+            if (tx < 2 && tx > -2 && speed-20<Robot.shooter.Read_Speed_Shooter()) 
+                Robot.intake.transferup_UP(0.7); //shoot!
             else
             {
                 if (tx > 2) Robot.shooter.rotate_left();
                 if (tx < -2) Robot.shooter.rotate_right();
             }
         }
-        else Robot.shooter.stop_shooter();
+        else end();
     }
 
     // Make this return true when this Command no longer needs to run execute()
