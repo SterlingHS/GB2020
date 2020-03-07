@@ -84,6 +84,7 @@ public class PixyTracker extends Subsystem {
 	}
 	public boolean Read_Pixy_is_Ball()
 	{
+		getBiggestBlock();
 		return ball;
     }
 }

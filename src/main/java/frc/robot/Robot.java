@@ -31,10 +31,10 @@ public static PixyTracker pixyTracker;
 
         intake = new Intake();
         shooter = new Shooter();
-        // climber = new Climber();
+        climber = new Climber();
         // wheelOfFortune = new WheelOfFortune();
         drivingSystem = new DrivingSystem();
-        // pixyTracker = new PixyTracker();
+        pixyTracker = new PixyTracker();
 
         // OI must be constructed after subsystems. If the OI creates Commands
         //(which it very likely will), subsystems are not guaranteed to be
@@ -48,7 +48,9 @@ public static PixyTracker pixyTracker;
         chooser.setDefaultOption("Autonomous Command", new AutonomousCommand());
         SmartDashboard.putData("Auto mode", chooser);
         SmartDashboard.putNumber("Set Speed",100);
-        SmartDashboard.putNumber("Error", 0);
+        SmartDashboard.putNumber("Kp", 1);
+        SmartDashboard.putNumber("Kd", 0);
+        SmartDashboard.putNumber("PID", 0);
     }
 
     /**
@@ -107,9 +109,10 @@ public static PixyTracker pixyTracker;
         SmartDashboard.putNumber("Limelight TY", shooter.Read_Limelight_ty());
         SmartDashboard.putNumber("Limelight TA", shooter.Read_Limelight_ta());
         SmartDashboard.putNumber("Limelight TV", shooter.Read_Limelight_tv());
-        SmartDashboard.putNumber("Speed Shooter", shooter.Read_Speed_Shooter());
         SmartDashboard.putNumber("Distance to wall",shooter.Distance_to_target());
         SmartDashboard.putNumber("Power Percent",shooter.percent_from_distance());
         SmartDashboard.putNumber("Power Speed",shooter.speed_from_distance());
+        SmartDashboard.putBoolean("Pixy Ball",pixyTracker.Read_Pixy_is_Ball());
+        SmartDashboard.putNumber("Speed Shooter",shooter.Read_Speed_Shooter());
     }
 }

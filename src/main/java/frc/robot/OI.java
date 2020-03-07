@@ -40,6 +40,9 @@ public class OI {
     public JoystickButton intakeBt;
     public JoystickButton intake_to_transferupBt;
     public JoystickButton shootBt;
+    public JoystickButton shoulderUpBt;
+    public JoystickButton shoulderDownBt;
+
     public Joystick joyDriver;
     public Joystick joyCo;
 
@@ -57,8 +60,14 @@ public class OI {
         intake_to_transferupBt.whileHeld(new IntakeBallsToTransferup());
 
         shootBt = new JoystickButton(joyDriver,RobotMap.driverButtonActiveShooter);
-        shootBt.whileHeld(new AimShoot());
-        // shootBt.whenPressed(new ActivateShooter());
+        // shootBt.whileHeld(new AimShoot());
+        shootBt.whileHeld(new ActivateShooter());
+
+        shoulderUpBt = new JoystickButton(joyDriver,RobotMap.driverButtonShoulderUp);
+        shoulderUpBt.whileHeld(new ShoulderUP());
+
+        shoulderDownBt = new JoystickButton(joyDriver,RobotMap.driverButtonShoulderDown);
+        shoulderDownBt.whileHeld(new ShoulderDOWN());
 
         // SmartDashboard Buttons
         SmartDashboard.putData("Autonomous Command", new AutonomousCommand());

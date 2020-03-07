@@ -13,6 +13,9 @@ public class Intake extends Subsystem {
   WPI_VictorSPX roller = new WPI_VictorSPX(RobotMap.ROLLER_CAN_ID);
   WPI_VictorSPX transferup = new WPI_VictorSPX(RobotMap.TRANSFERUP_CAN_ID);
   DigitalInput ball_sensor_transferup = new DigitalInput(RobotMap.TRANSFERUP_DIO_ID);
+  DigitalInput ball_sensor_inner = new DigitalInput(RobotMap.INNER_SWITCH_DIO_ID);
+  DigitalInput ball_sensor_right = new DigitalInput(RobotMap.RIGHT_SWITCH_DIO_ID);
+  DigitalInput ball_sensor_left = new DigitalInput(RobotMap.LEFT_SWITCH_DIO_ID);
   int number_of_balls = RobotMap.NUMBER_OF_BALLS_INIT;
 
   public void initDefaultCommand()
@@ -61,9 +64,22 @@ public class Intake extends Subsystem {
     return ball_sensor_transferup.get();
   }
 
+  public boolean is_ball_inner() {
+    return ball_sensor_inner.get();
+  }
+
+  public boolean is_ball_in_intake() {
+    return ball_sensor_left.get() || ball_sensor_right.get();
+  }
+
   public void transferup_to_sensor() {
     if (is_ball_transferup()) stop_transferup();
     else transferup_UP(RobotMap.STOCK_SPEED_TRANSFERUP);
+  }
+
+  public void roller_to_sensor() {
+    if (is_ball_inner()) stop_roller();
+    else roller_IN();
   }
 }
 

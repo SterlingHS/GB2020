@@ -19,9 +19,11 @@ public class RobotMap {
     // Joysitck configuration
     public static int JOYDRIVER_USB_PORT = 0;
     public static int JOYCO_USB_PORT = 1;
-    public static int driverButtonIntakeBt = 1;
+    public static int driverButtonIntakeBt = 5;
     public static int driverButtonIntake_to_transferupBt = 2;
     public static int driverButtonActiveShooter = 6;
+    public static int driverButtonShoulderUp = 4;
+    public static int driverButtonShoulderDown = 1;
     public static final int AXIS_FORWARD = 1;
     public static final int AXIS_ROTATION = 2;
 
@@ -36,11 +38,16 @@ public class RobotMap {
     public static int SHOOTER1_CAN_ID = 16;
     public static int SHOOTER2_CAN_ID = 17;
     public static int ROTATOR_CAN_ID = 15;
+    public static int WINCH_CAN_ID = 22;
+    public static int SHOULDER_CAN_ID = 23;
 
     //DIO IDs
     public static int LEFT_SWITCH_DIO = 9;
     public static int RIGHT_SWITCH_DIO = 8;
     public static int TRANSFERUP_DIO_ID = 7;
+    public static int INNER_SWITCH_DIO_ID = 4;
+    public static int RIGHT_SWITCH_DIO_ID = 3;
+    public static int LEFT_SWITCH_DIO_ID = 2;
     public static int SHOOTER_ENCODER1 = 5;
     public static int SHOOTER_ENCODER2 = 6;
 
@@ -61,4 +68,8 @@ public class RobotMap {
     public static final double ActivateShooterSpeed = 1;
     public static double ball_counter = 0;
     public static final double MAX_SHOOTER_SPEED = 350;
+
+    // Climber
+    public static final double WINCH_SPEED = 0.3;
+    public static final double SHOULDER_SPEED = 0.5;
 }	

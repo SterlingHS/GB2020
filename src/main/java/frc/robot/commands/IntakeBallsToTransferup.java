@@ -7,6 +7,8 @@ import frc.robot.Robot;
  *
  */
 public class IntakeBallsToTransferup extends Command {
+    private int number_of_balls;
+    private boolean flag_ball_count;
 
     public IntakeBallsToTransferup() {
 
@@ -16,13 +18,17 @@ public class IntakeBallsToTransferup extends Command {
     // Called just before this Command runs the first time
     @Override
     protected void initialize() {
+        number_of_balls = 0;
+        flag_ball_count = false;
     }
 
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
-        Robot.intake.frontintakeIN();
-        Robot.intake.roller_IN();
+        count_ball();
+        if (number_of_balls < 4)
+            Robot.intake.frontintakeIN();
+        Robot.intake.roller_to_sensor();
         Robot.intake.transferup_to_sensor();
     }
 
@@ -45,5 +51,17 @@ public class IntakeBallsToTransferup extends Command {
     @Override
     protected void interrupted() {
         end();
+    }
+
+    public void count_ball() {
+        if (flag_ball_count == false && Robot.intake.is_ball_in_intake())
+        {
+            flag_ball_count = true;
+            number_of_balls += 1;
+        }
+        if (flag_ball_count == true && Robot.intake.is_ball_in_intake() == false) 
+        {
+            flag_ball_count = false;
+        }
     }
 }
