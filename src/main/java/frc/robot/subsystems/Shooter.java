@@ -11,9 +11,7 @@
 package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
-import edu.wpi.first.wpilibj.controller.ProfiledPIDController;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-import edu.wpi.first.wpilibj.trajectory.TrapezoidProfile;
 
 import com.ctre.phoenix.motorcontrol.can.WPI_VictorSPX;
 
@@ -34,12 +32,12 @@ public class Shooter extends Subsystem {
     private Encoder shooter_encoder = new Encoder(RobotMap.SHOOTER_ENCODER1, RobotMap.SHOOTER_ENCODER2);
     
     // PID Shooter spped
-    private double kDt = 0.02;
+    /* private double kDt = 0.02;
     private final TrapezoidProfile.Constraints m_constraints =
     new TrapezoidProfile.Constraints(1.75, 0.75);
     private final ProfiledPIDController shooter_PID =
       new ProfiledPIDController(SmartDashboard.getNumber("Kp", 1), 0.0, SmartDashboard.getNumber("Kd", 0), m_constraints, kDt);
-
+*/
     /*public void Shooter() 
     {
         percent = 1;
@@ -62,11 +60,11 @@ public class Shooter extends Subsystem {
     // Methods for shooter
     public void shootSpeed(double desired_speed) 
     {
-        double percent_from_max=desired_speed/RobotMap.MAX_SHOOTER_SPEED;
+        //double percent_from_max=desired_speed/RobotMap.MAX_SHOOTER_SPEED;
         double current_speed = Read_Speed_Shooter();
         double error=desired_speed-current_speed;
         SmartDashboard.putNumber("Error", error);
-        shooterCtr.set(-desired_speed/RobotMap.MAX_SHOOTER_SPEED);
+        //shooterCtr.set(-desired_speed/RobotMap.MAX_SHOOTER_SPEED);
         // Run controller and update motor output
         /*shooter_PID.setGoal(desired_speed);
         double PID_calculate = shooter_PID.calculate(current_speed);

@@ -79,7 +79,7 @@ public class DrivingSystem extends Subsystem {
             forward*=slowdown_factor;
             turn*=slowdown_factor;
         }
-        differentialDrive1.arcadeDrive(forward, turn, true); 
+        differentialDrive1.arcadeDrive(-forward, turn, true); 
         // true = squaredInputs - If set, decreases the input sensitivity at low speeds.
     }
 

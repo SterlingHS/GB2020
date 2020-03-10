@@ -60,8 +60,8 @@ public class OI {
         intake_to_transferupBt.whileHeld(new IntakeBallsToTransferup());
 
         shootBt = new JoystickButton(joyDriver,RobotMap.driverButtonActiveShooter);
-        // shootBt.whileHeld(new AimShoot());
-        shootBt.whileHeld(new ActivateShooter());
+        shootBt.whileHeld(new AimShoot());
+        // shootBt.whileHeld(new ActivateShooter());
 
         shoulderUpBt = new JoystickButton(joyDriver,RobotMap.driverButtonShoulderUp);
         shoulderUpBt.whileHeld(new ShoulderUP());

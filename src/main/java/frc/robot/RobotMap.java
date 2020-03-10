@@ -15,7 +15,7 @@ public class RobotMap {
     // number and the module. For example you with a rangefinder:
     // public static int rangefinderPort = 1;
     // public static int rangefinderModule = 1;
-    
+
     // Joysitck configuration
     public static int JOYDRIVER_USB_PORT = 0;
     public static int JOYCO_USB_PORT = 1;
@@ -24,8 +24,8 @@ public class RobotMap {
     public static int driverButtonActiveShooter = 6;
     public static int driverButtonShoulderUp = 4;
     public static int driverButtonShoulderDown = 1;
-    public static final int AXIS_FORWARD = 1;
-    public static final int AXIS_ROTATION = 2;
+    public static final int AXIS_FORWARD = 5;
+    public static final int AXIS_ROTATION = 0;
 
     // CAN IDs
     public static int DRIVETRAIN_LEFT_1 = 11;
@@ -55,10 +55,10 @@ public class RobotMap {
     public static double DRIVER_SLOWDOWN = .6; 
 
     // Intake
-    public static double MAX_SPEED_FRONTINTAKE = 0.5;
-    public static double MAX_SPEED_ROLLER = 0.5; 
-    public static double MAX_SPEED_TRANSFERUP = 0.6;
-    public static double STOCK_SPEED_TRANSFERUP = 0.3;
+    public static double MAX_SPEED_FRONTINTAKE = 0.4;
+    public static double MAX_SPEED_ROLLER = 0.25; 
+    public static double MAX_SPEED_TRANSFERUP = 0.75;
+    public static double STOCK_SPEED_TRANSFERUP = 0.4;
     public static int NUMBER_OF_BALLS_INIT = 0;
     
     // Variables for Shooter
@@ -68,6 +68,7 @@ public class RobotMap {
     public static final double ActivateShooterSpeed = 1;
     public static double ball_counter = 0;
     public static final double MAX_SHOOTER_SPEED = 350;
+    public static final double SpeedError = 15;
 
     // Climber
     public static final double WINCH_SPEED = 0.3;

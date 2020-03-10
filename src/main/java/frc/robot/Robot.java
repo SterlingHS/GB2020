@@ -98,10 +98,13 @@ public static PixyTracker pixyTracker;
     public void teleopPeriodic() {
         Scheduler.getInstance().run();
         update_smartboard();
+        intake.count_balls();
     }
 
     public void update_smartboard(){
         //SmartDashboard.putBoolean("Rotator Right", rotator...);
+        SmartDashboard.putBoolean("Roller Sensor", intake.is_ball_inner());
+        SmartDashboard.putBoolean("Intake Sensor", intake.is_ball_in_intake());
         SmartDashboard.putBoolean("Transfer Up Ball", intake.is_ball_transferup());
         SmartDashboard.putBoolean("Left Rotator", shooter.is_left_rotator());
         SmartDashboard.putBoolean("Right Rotator", shooter.is_right_rotator());
@@ -114,5 +117,6 @@ public static PixyTracker pixyTracker;
         SmartDashboard.putNumber("Power Speed",shooter.speed_from_distance());
         SmartDashboard.putBoolean("Pixy Ball",pixyTracker.Read_Pixy_is_Ball());
         SmartDashboard.putNumber("Speed Shooter",shooter.Read_Speed_Shooter());
+        SmartDashboard.putNumber("Number of balls",intake.number_of_balls());
     }
 }

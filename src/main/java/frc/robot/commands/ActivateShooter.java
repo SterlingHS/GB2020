@@ -11,7 +11,6 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.Robot;
 
 /**
@@ -43,13 +42,11 @@ public class ActivateShooter extends Command {
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
-        //Robot.shooter.shootSpeed(-Robot.shooter.speed_from_distance());
-        double speed;
-        speed=SmartDashboard.getNumber("Set Speed",150);
+        double speed = Robot.shooter.speed_from_distance();
         Robot.shooter.shootSpeed(speed);
-        //Robot.intake.transferup_UP(.7);
-        //Robot.intake.roller_IN();
-        //Robot.intake.frontintakeIN();
+        Robot.intake.transferup_UP(.7);
+        Robot.intake.roller_IN();
+        Robot.intake.frontintakeIN();
     }
 
     // Make this return true when this Command no longer needs to run execute()

@@ -16,7 +16,9 @@ public class Intake extends Subsystem {
   DigitalInput ball_sensor_inner = new DigitalInput(RobotMap.INNER_SWITCH_DIO_ID);
   DigitalInput ball_sensor_right = new DigitalInput(RobotMap.RIGHT_SWITCH_DIO_ID);
   DigitalInput ball_sensor_left = new DigitalInput(RobotMap.LEFT_SWITCH_DIO_ID);
-  int number_of_balls = RobotMap.NUMBER_OF_BALLS_INIT;
+  public int number_of_balls = RobotMap.NUMBER_OF_BALLS_INIT;
+  public boolean ball_flag_in = false;
+  public boolean ball_flag_out = false;
 
   public void initDefaultCommand()
   {
@@ -81,6 +83,48 @@ public class Intake extends Subsystem {
     if (is_ball_inner()) stop_roller();
     else roller_IN();
   }
+
+  public void reset_balls(){
+    number_of_balls=0;
+  }
+
+  public void add_ball(){
+    number_of_balls+=1;
+  }
+
+  public void remove_ball(){
+    number_of_balls-=1;
+  }
+
+  public int number_of_balls(){
+    return number_of_balls;
+  }
+
+  public void count_balls() {
+    // Counts balls going into the intake
+    if(is_ball_in_intake() && ball_flag_in==false)
+    {
+      ball_flag_in=true;
+      if(number_of_balls<4)
+        number_of_balls+=1;
+    }
+    if(is_ball_in_intake()!=true && ball_flag_in)
+    {
+      ball_flag_in=false;
+    }
+
+    // Counts balls coming out of the transfer up
+    if(is_ball_transferup() && ball_flag_out==false)
+    {
+      ball_flag_out=true;
+    }
+    if(is_ball_transferup()==false && ball_flag_out)
+    {
+      ball_flag_out=false;
+      if(number_of_balls>0) number_of_balls-=1;
+    }
+  }
 }
+
 
 
