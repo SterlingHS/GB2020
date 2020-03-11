@@ -24,6 +24,12 @@ public class Intake extends Subsystem {
   {
   }
   
+  public void stop_all(){
+    stop_frontintake();
+    stop_roller();
+    stop_transferup();
+  }
+
   public void stop_frontintake() {
     frontintake.set(ControlMode.PercentOutput, 0);
   }
@@ -89,11 +95,11 @@ public class Intake extends Subsystem {
   }
 
   public void add_ball(){
-    number_of_balls+=1;
+    if(number_of_balls<4) number_of_balls+=1;
   }
 
   public void remove_ball(){
-    number_of_balls-=1;
+    if(number_of_balls>0) number_of_balls-=1;
   }
 
   public int number_of_balls(){

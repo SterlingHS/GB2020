@@ -51,6 +51,7 @@ public static PixyTracker pixyTracker;
         SmartDashboard.putNumber("Kp", 1);
         SmartDashboard.putNumber("Kd", 0);
         SmartDashboard.putNumber("PID", 0);
+        SmartDashboard.putNumber("x from pixy",0);
     }
 
     /**
@@ -99,6 +100,7 @@ public static PixyTracker pixyTracker;
         Scheduler.getInstance().run();
         update_smartboard();
         intake.count_balls();
+        pixyTracker.getBiggestBlock();
     }
 
     public void update_smartboard(){
@@ -118,5 +120,6 @@ public static PixyTracker pixyTracker;
         SmartDashboard.putBoolean("Pixy Ball",pixyTracker.Read_Pixy_is_Ball());
         SmartDashboard.putNumber("Speed Shooter",shooter.Read_Speed_Shooter());
         SmartDashboard.putNumber("Number of balls",intake.number_of_balls());
+        SmartDashboard.putNumber("x from pixy",pixyTracker.Read_Pixy_x());
     }
 }

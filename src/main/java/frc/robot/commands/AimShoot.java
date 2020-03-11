@@ -22,6 +22,7 @@ public class AimShoot extends Command {
     double startTime;
     boolean newTimer=true;
     boolean shoot=false;
+    boolean correct_angle=false;
     
     public AimShoot() {
 
@@ -43,21 +44,21 @@ public class AimShoot extends Command {
         double tx = Robot.shooter.Read_Limelight_tx();
         double tv = Robot.shooter.Read_Limelight_tv();
         double speed;
-        tv = 1; // Delete this line after testing
         if(tv == 1)
         {   
-            //speed = Robot.shooter.speed_from_distance();
-            speed = 100; // Delete this line after testing
-            tx = 0; // Delete this line after testing
+            speed = Robot.shooter.speed_from_distance();
+            speed = 160;
             // TEST IF DISTANCE IS TOO FAR
             Robot.shooter.shootSpeed(speed);
-            if (tx < 2 && tx > -2 && speed-20<Robot.shooter.Read_Speed_Shooter()) 
-                if(shoot || Robot.shooter.Read_Speed_Shooter()>speed-RobotMap.SpeedError)    
-                    move_balls();
-            else
-            {
-                if (tx > 2) Robot.shooter.rotate_left();
-                if (tx < -2) Robot.shooter.rotate_right();
+            if (tx > 1 && correct_angle==false) Robot.shooter.rotate_right();
+            if (tx < -1 && correct_angle==false) Robot.shooter.rotate_left();
+            if ((tx < 1 && tx > -1) || correct_angle)
+            {            
+                correct_angle = true;
+                Robot.shooter.stop_rotator();
+                if (speed-RobotMap.SpeedError<Robot.shooter.Read_Speed_Shooter())
+                    if(shoot || Robot.shooter.Read_Speed_Shooter()>speed-RobotMap.SpeedError)    
+                        move_balls();
             }
         }
         else end();
@@ -78,6 +79,7 @@ public class AimShoot extends Command {
         Robot.intake.stop_frontintake();
         newTimer = true;
         shoot = false;
+        correct_angle = false;
     }
 
     // Called when another command which requires one or more of the same
@@ -88,18 +90,17 @@ public class AimShoot extends Command {
     }
 
     protected void move_balls() {
-        shoot = true;
-        System.out.println("NewTime:" + newTimer);
         if(newTimer == true) 
         {
             startTime = System.currentTimeMillis();
             newTimer = false;
             System.out.println("Timer start");
         }
-        Robot.intake.transferup_UP(RobotMap.MAX_SPEED_TRANSFERUP);
-        if(System.currentTimeMillis() - startTime > 500)
+        if(System.currentTimeMillis() - startTime > 200)
+            Robot.intake.transferup_UP(RobotMap.MAX_SPEED_TRANSFERUP);
+        if(System.currentTimeMillis() - startTime > 300)
             Robot.intake.roller_IN();
-        if(System.currentTimeMillis() - startTime > 500)
+        if(System.currentTimeMillis() - startTime > 400)
             Robot.intake.frontintakeIN(); 
     }
 }

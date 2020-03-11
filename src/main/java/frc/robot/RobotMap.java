@@ -19,13 +19,17 @@ public class RobotMap {
     // Joysitck configuration
     public static int JOYDRIVER_USB_PORT = 0;
     public static int JOYCO_USB_PORT = 1;
-    public static int driverButtonIntakeBt = 5;
-    public static int driverButtonIntake_to_transferupBt = 2;
+
+    // Button Config for Driver
+    public static int driverButtonIntake_to_transferupBt = 5;
     public static int driverButtonActiveShooter = 6;
-    public static int driverButtonShoulderUp = 4;
-    public static int driverButtonShoulderDown = 1;
-    public static final int AXIS_FORWARD = 5;
-    public static final int AXIS_ROTATION = 0;
+    public static final int AXIS_FORWARD = 1;
+    public static final int AXIS_ROTATION = 4;
+
+    // Button Config for Co
+    public static final int AddBallCoBt = 1;
+    public static final int RemoveBallCoBt = 2;
+    public static final int ResetBallCoBt = 3;
 
     // CAN IDs
     public static int DRIVETRAIN_LEFT_1 = 11;
@@ -38,7 +42,7 @@ public class RobotMap {
     public static int SHOOTER1_CAN_ID = 16;
     public static int SHOOTER2_CAN_ID = 17;
     public static int ROTATOR_CAN_ID = 15;
-    public static int WINCH_CAN_ID = 22;
+    public static int WINCH_CAN_ID = 22; 
     public static int SHOULDER_CAN_ID = 23;
 
     //DIO IDs
@@ -57,18 +61,18 @@ public class RobotMap {
     // Intake
     public static double MAX_SPEED_FRONTINTAKE = 0.4;
     public static double MAX_SPEED_ROLLER = 0.25; 
-    public static double MAX_SPEED_TRANSFERUP = 0.75;
+    public static double MAX_SPEED_TRANSFERUP = 0.8;
     public static double STOCK_SPEED_TRANSFERUP = 0.4;
     public static int NUMBER_OF_BALLS_INIT = 0;
     
     // Variables for Shooter
     public static final double Shooter_MAX_Speed = 1;
     public static final double inputShooter_Speed = 0.5;
-    public static final double rotateShooter_Speed = 0.7;
+    public static final double rotateShooter_Speed = 0.20;
     public static final double ActivateShooterSpeed = 1;
     public static double ball_counter = 0;
     public static final double MAX_SHOOTER_SPEED = 350;
-    public static final double SpeedError = 15;
+    public static final double SpeedError = 20;
 
     // Climber
     public static final double WINCH_SPEED = 0.3;

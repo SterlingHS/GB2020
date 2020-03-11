@@ -47,7 +47,7 @@ public class PixyTracker extends Subsystem {
 		// does not wait for new data if none is available,
 		// and limits the number of returned blocks to 25, for a slight increase in efficiency
 		int blockCount = pixy.getCCC().getBlocks(false, Pixy2CCC.CCC_SIG1, 25);
-		System.out.println("Found " + blockCount + " blocks!"); // Reports number of blocks found
+		// System.out.println("Found " + blockCount + " blocks!"); // Reports number of blocks found
 		if (blockCount >= 0)
 		{
 			ArrayList<Block> blocks = pixy.getCCC().getBlocks(); // Gets a list of all blocks found by the Pixy2
@@ -84,7 +84,6 @@ public class PixyTracker extends Subsystem {
 	}
 	public boolean Read_Pixy_is_Ball()
 	{
-		getBiggestBlock();
 		return ball;
     }
 }
