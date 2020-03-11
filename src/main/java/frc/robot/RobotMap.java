@@ -62,7 +62,7 @@ public class RobotMap {
 
     // Intake
     public static double MAX_SPEED_FRONTINTAKE = 0.4;
-    public static double MAX_SPEED_ROLLER = 0.25; 
+    public static double MAX_SPEED_ROLLER = 0.2; 
     public static double MAX_SPEED_TRANSFERUP = 0.8;
     public static double STOCK_SPEED_TRANSFERUP = 0.4;
     public static int NUMBER_OF_BALLS_INIT = 0;
@@ -70,7 +70,7 @@ public class RobotMap {
     // Variables for Shooter
     public static final double Shooter_MAX_Speed = 1;
     public static final double inputShooter_Speed = 0.5;
-    public static final double rotateShooter_Speed = 0.20;
+    public static final double rotateShooter_Speed = 0.2;
     public static final double ActivateShooterSpeed = 1;
     public static double ball_counter = 0;
     public static final double MAX_SHOOTER_SPEED = 350;

@@ -5,6 +5,8 @@ import frc.robot.RobotMap;
 import frc.robot.commands.*;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
+import com.kauailabs.navx.frc.AHRS;
+import edu.wpi.first.wpilibj.SerialPort;
 import edu.wpi.first.wpilibj.SpeedControllerGroup;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 
@@ -22,6 +24,8 @@ public class DrivingSystem extends Subsystem {
     private final WPI_TalonSRX speedController4;
     private final SpeedControllerGroup speedController_Rightside;
     private final DifferentialDrive differentialDrive1;
+
+    private AHRS navx_device;
 
     public DrivingSystem() {
         speedController1 = new WPI_TalonSRX(RobotMap.DRIVETRAIN_LEFT_1);
@@ -52,6 +56,8 @@ public class DrivingSystem extends Subsystem {
         differentialDrive1.setExpiration(0.1);
         differentialDrive1.setMaxOutput(1.0);
 
+        navx_device = new AHRS(SerialPort.Port.kUSB1);  
+        navx_device.enableLogging(true);
     }
 
     @Override
@@ -81,6 +87,21 @@ public class DrivingSystem extends Subsystem {
         }
         differentialDrive1.arcadeDrive(-forward, turn, true); 
         // true = squaredInputs - If set, decreases the input sensitivity at low speeds.
+    }
+
+    public void calibrateGyro()
+    {
+        navx_device.calibrate();
+    }
+
+    public void resetAngle()
+    {
+        navx_device.reset();
+    }
+
+    public double getAngle()
+    {
+        return navx_device.getAngle();
     }
 
 }
