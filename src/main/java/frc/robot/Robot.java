@@ -100,7 +100,7 @@ public static PixyTracker pixyTracker;
         Scheduler.getInstance().run();
         update_smartboard();
         intake.count_balls();
-        pixyTracker.getBiggestBlock();
+        // pixyTracker.getBiggestBlock();
     }
 
     public void update_smartboard(){

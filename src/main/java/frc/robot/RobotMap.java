@@ -25,6 +25,7 @@ public class RobotMap {
     public static int driverButtonActiveShooter = 6;
     public static final int AXIS_FORWARD = 1;
     public static final int AXIS_ROTATION = 4;
+    public static final int ASSISTED_DRIVING = 7;
 
     // Button Config for Co
     public static final int AddBallCoBt = 1;
@@ -57,6 +58,7 @@ public class RobotMap {
 
     // Driver configuration
     public static double DRIVER_SLOWDOWN = .6; 
+    public static double ASSISTED_SPEED = 0.5;
 
     // Intake
     public static double MAX_SPEED_FRONTINTAKE = 0.4;
